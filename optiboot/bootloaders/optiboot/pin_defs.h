@@ -64,7 +64,7 @@
 # define UART_SRL UBRRL
 # define UART_UDR LINDAT
 #else
-# error UART == 0, but no UART0 on device
+#error UART == 0, but no UART0 on device
 #endif
 #elif UART == 1
 #if !defined(UDR1)

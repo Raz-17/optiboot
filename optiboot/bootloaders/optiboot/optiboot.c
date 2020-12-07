@@ -1457,4 +1457,10 @@ OPT2FLASH(OPTIBOOT_CUSTOMVER);
 #endif
 OPTFLASHSECT const char f_version[] = "Version=" xstr(OPTIBOOT_MAJVER) "." xstr(OPTIBOOT_MINVER);
 
+/* Set MISO output, all others input */
+DDRB = (1<<DDB4);
+/* Set SPI mode(Master=1 Slave=0)*/
+SPCR = (0<<MSTR);
+/* Enable SPI */
+SPCR = (1<<SPE);
 #endif

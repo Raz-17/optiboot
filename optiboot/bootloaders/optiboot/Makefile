@@ -410,7 +410,7 @@ else
 atmega168_isp: EFUSE ?= FA
 endif
 atmega168_isp: isp
-
+#*********************************************************************************************************************************************************
 HELPTEXT += "target atmega328*    - ATmega328, ATmega328p, ATmega328pb\n"
 atmega328: TARGET = atmega328
 atmega328: MCU_TARGET = atmega328p
@@ -442,6 +442,8 @@ atmega328_isp: LFUSE ?= FF
 # 2.7V brownout
 atmega328_isp: EFUSE ?= FD
 atmega328_isp: isp
+#**********************************************************************************************************************************************************
+
 
 #Atmega1280
 #HELPTEXT += "target atmega1280    - ATmega1280 (100pin, 128k)\n"
