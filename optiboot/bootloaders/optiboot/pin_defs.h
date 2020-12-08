@@ -35,6 +35,14 @@
 #define UART_TX_BIT 1
 #define UART_RX_BIT 0
 #endif
+
+/* registry and bit adresses for setting Slave Mode */
+#define SPI_DDR     SPCR
+#define MISO_DIR    0b00010000
+#define SPI_CTL     0x2c
+#define SPI_MODE    0b00010000
+#define SPI_ENABLE  0b01000000
+
 #endif
 
 /*

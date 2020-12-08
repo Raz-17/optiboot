@@ -576,7 +576,7 @@ void pre_main(void) {
 }
 
 
-/* main program starts here */
+/* main program starts here ******************************************************************************************************************************/
 int main(void) {
   uint8_t ch;
 
@@ -971,6 +971,13 @@ int main(void) {
 
 #endif // FLASHEND
 #endif // VBP
+
+  /* Set MISO output, all others input */
+  DDRB |= (1<<MISO_DIR);
+  /* Set SPI mode(Master=1 Slave=0)*/
+  SPCR |= (0<<SPI_MODE);
+  /* Enable SPI */
+  SPCR |= (1<<SPI_ENABLE);
 
       writebuffer(desttype, buff, address, savelength);
 
@@ -1457,10 +1464,4 @@ OPT2FLASH(OPTIBOOT_CUSTOMVER);
 #endif
 OPTFLASHSECT const char f_version[] = "Version=" xstr(OPTIBOOT_MAJVER) "." xstr(OPTIBOOT_MINVER);
 
-/* Set MISO output, all others input */
-DDRB = (1<<DDB4);
-/* Set SPI mode(Master=1 Slave=0)*/
-SPCR = (0<<MSTR);
-/* Enable SPI */
-SPCR = (1<<SPE);
 #endif
